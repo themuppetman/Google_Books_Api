@@ -1,7 +1,7 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Navbar from './components/Navbar';
-import Home from './pages/Home';
+import SearchBooks from './pages/SearchBooks';
 import SavedBooks from './pages/SavedBooks';
 
 const App = () => {
@@ -9,10 +9,10 @@ const App = () => {
     <Router>
       <div>
         <Navbar />
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route exact path="/saved" component={SavedBooks} />
-        </Switch>
+        <Routes>
+          <Route path="/" element={<SearchBooks />} />
+          <Route path="/saved" element={<SavedBooks />} />
+        </Routes>
       </div>
     </Router>
   );
