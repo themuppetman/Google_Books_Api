@@ -1,20 +1,13 @@
-import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import './App.css';
+import { Outlet } from 'react-router-dom';
 import Navbar from './components/Navbar';
-import SearchBooks from './pages/SearchBooks';
-import SavedBooks from './pages/SavedBooks';
 
-const App = () => {
+function App() {
   return (
-    <Router>
-      <div>
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<SearchBooks />} />
-          <Route path="/saved" element={<SavedBooks />} />
-        </Routes>
-      </div>
-    </Router>
+    <>
+      <Navbar />
+      <Outlet />
+    </>
   );
 }
 
